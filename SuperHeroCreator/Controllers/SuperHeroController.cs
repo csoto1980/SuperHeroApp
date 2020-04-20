@@ -94,7 +94,8 @@ namespace SuperHeroCreator.Controllers
         // GET: SuperHero/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var superHeroToDelete = _context.SuperHeros.FirstOrDefault(s => s.Id == id);
+            return View(superHeroToDelete);
         }
 
         // POST: SuperHero/Delete/5
@@ -104,8 +105,9 @@ namespace SuperHeroCreator.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var superHeroToDelete = _context.SuperHeros.FirstOrDefault(s => s.Id == id);
+                _context.SuperHeros.Remove(superHeroToDelete);
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
