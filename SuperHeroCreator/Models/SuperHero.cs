@@ -10,17 +10,15 @@ namespace SuperHeroCreator.Models
     {
         [Key]
         public int Id { get; set; }
-
-        [Display(Name="Superhero Name")]
         public string Name { get; set; }
 
-        [Display(Name = "Alter Ego Name")]
+        [Display(Name = "Alter Ego")]
         public string AlterEgoName { get; set; }
 
-        [Display(Name = "Primary Superhero Ability")]
+        [Display(Name = "Primary Ability")]
         public string PrimaryAbility { get; set; }
 
-        [Display(Name = "Secondary Superhero Ability")]
+        [Display(Name = "Secondary Ability")]
         public string SecondaryAbility { get; set; }
 
         public string Catchphrase { get; set; }

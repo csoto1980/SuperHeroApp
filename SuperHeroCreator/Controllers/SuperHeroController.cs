@@ -4,15 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SuperHeroCreator.Data;
 
 namespace SuperHeroCreator.Controllers
 {
     public class SuperHeroController : Controller
     {
+        private ApplicationDbContext _context;
+        public SuperHeroController(ApplicationDbContext _context)
+        {
+            this._context = _context;
+        }
         // GET: SuperHero
         public ActionResult Index()
         {
-            return View();
+            var superHeros = _context.SuperHeros.ToList();
+            return View(superHeros);
         }
 
         // GET: SuperHero/Details/5

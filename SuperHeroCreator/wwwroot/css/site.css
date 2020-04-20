@@ -62,6 +62,12 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+
+.backgroundImage {
+    background-image: url('../images/superman.jpg');
+    background-size: cover;
+   
+}
 .footer {
   position: absolute;
   bottom: 0;
