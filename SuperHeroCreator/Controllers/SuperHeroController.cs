@@ -58,19 +58,32 @@ namespace SuperHeroCreator.Controllers
         // GET: SuperHero/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            SuperHero superHero = _context.SuperHeros.FirstOrDefault(s => s.Id == id);
+            return View(superHero);
         }
 
         // POST: SuperHero/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, SuperHero superHero)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
+                if(ModelState.IsValid)
+                {
+                    SuperHero superHeroToEdit = _context.SuperHeros.FirstOrDefault(s => s.Id == id);
+                    superHeroToEdit.Name = superHero.Name;
+                    superHeroToEdit.AlterEgoName = superHero.AlterEgoName;
+                    superHeroToEdit.PrimaryAbility = superHero.PrimaryAbility;
+                    superHeroToEdit.SecondaryAbility = superHero.SecondaryAbility;
+                    superHeroToEdit.Catchphrase = superHero.Catchphrase;
+                    _context.SaveChanges();
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View(superHero);
+                }
             }
             catch
             {
