@@ -10,10 +10,10 @@ namespace SuperHeroCreator.Controllers
 {
     public class SuperHeroController : Controller
     {
-        private ApplicationDbContext _context;
-        public SuperHeroController(ApplicationDbContext _context)
+        public ApplicationDbContext _context;
+        public SuperHeroController(ApplicationDbContext context)
         {
-            this._context = _context;
+            _context = context;
         }
         // GET: SuperHero
         public ActionResult Index()
@@ -25,7 +25,8 @@ namespace SuperHeroCreator.Controllers
         // GET: SuperHero/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var superhero = _context.SuperHeros.Where(s => s.Id == id).SingleOrDefault();
+            return View(superhero);
         }
 
         // GET: SuperHero/Create

@@ -2,3 +2,13 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+$(document).ready(function () {
+	$('#myInput').on('keyup', function () {
+		var value = $(this).val().toLowerCase();
+		$('#movieTable tr').filter(function () {
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+		});
+	});
+});
+
