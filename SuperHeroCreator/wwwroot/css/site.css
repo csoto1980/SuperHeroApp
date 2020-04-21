@@ -62,18 +62,86 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+/*---------------Rotating Cube start-----------------*/
 
-.backgroundImage {
-    background-image: url('../images/superman.jpg');
-    background-size: cover;
-   
+.wrap {
+    margin-top: 150px;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+}
+
+.cube {
+    transform-style: preserve-3d;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    position: relative;
+}
+
+    .cube img {
+        position: absolute;
+        opacity: 0.8;
+    }
+        .cube img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+
+        .cube img:nth-child(2) {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .cube img:nth-child(3) {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .cube img:nth-child(4) {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .cube img:nth-child(5) {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .cube img:nth-child(6) {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+@keyframes loop {
+    from {
+        transform: rotateX(0deg) rotateY(0deg)
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg)
+    }
+}
+.cube {
+    animation: loop 10s linear infinite;
+}
+/*---------------Rotating Cube end-----------------*/
+
+    .backgroundImage {
+        background-image: url('../images/superman.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-color: #110f67;
+    }
+.backgroundColor {
+    background-color: #033C73;
+}
+.backgroundColorLayout {
+    background-color: #C71C22;
 }
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #033C73;
+    color: white;
+
 }
 
 
