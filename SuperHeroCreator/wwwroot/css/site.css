@@ -35,8 +35,10 @@ html {
   }
 }
 
+
+
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
@@ -118,6 +120,7 @@ body {
 .cube {
     animation: loop 10s linear infinite;
 }
+
 /*---------------Rotating Cube end-----------------*/
 
     .backgroundImage {
@@ -130,9 +133,48 @@ body {
 .backgroundColor {
     background-color: #033C73;
 }
+
+.backgroundColorGray {
+    background-color: #343a40 !important;
+    border-radius: .02em;
+}
 .backgroundColorLayout {
     background-color: #C71C22;
 }
+body-data_table {
+    text-align: center;
+}
+.data_table {
+    display: inline-block;
+    overflow: hidden;
+
+    padding: 10px;
+    width: 500px;
+}
+
+    .data_table dt, .data_table dd {
+        margin-bottom: 2px;
+        float: left;
+        display: block;
+    }
+
+    .data_table dt {
+        clear: both;
+        padding-right: 12px;
+        padding-left: 125px;
+    }
+
+dl {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+body-data_table {
+    text-align: center;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -141,7 +183,27 @@ body {
     line-height: 60px; /* Vertically center the text there */
     background-color: #033C73;
     color: white;
-
+}
+/*---------------Glowing Text start-----------------*/
+.glow {
+    position: center;
+    font-size: 80px;
+    color: #C71C22;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    bottom: 100px;
 }
 
+@-webkit-keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
 
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+}
+
+} 

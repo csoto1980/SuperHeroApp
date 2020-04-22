@@ -4,11 +4,22 @@
     ViewData["Title"] = "Index";
 }
 <br>
-<h1>Superheros</h1>
-
-<table class="table">
+<div class="contatiner" style="height: 300px;">
+    <div class="jumbotron jumbotronImage">
+        <h4 class="display-4 text-center text-light">Superheros</h4>
+        <hr class="my-4">
+        <p class="lead text-center text-light">Click on Superhero name for details.</p>
+        <p class="text-center align-content-center">
+        <a asp-action="Create" class="btn btn-primary text-light">Create New Superhero</a>
+        </p>
+    </div>
+</div>
+<table class="table table-dark">
     <thead>
         <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -31,6 +42,9 @@
         @foreach (var item in Model)
         {
             <tr>
+                <td>
+                    @*<a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>*@
+                </td>
                 <td>
                     <a asp-action="Details" asp-route-id="@item.Id">@item.Name</a>
                 </td>
@@ -55,7 +69,5 @@
         }
     </tbody>
 </table>
-<p>
-    <a asp-action="Create">Create New Superhero</a>
-</p>
+
 

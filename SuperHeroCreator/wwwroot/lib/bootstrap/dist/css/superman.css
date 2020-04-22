@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    background: #4b79a1;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top,
+            #283e51,
+            #0a2342);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top,
+            #283e51,
+            #0a2342);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -olinear-gradient(to top, #283e51, #0a2342);
+}
+
+.sky .star {
+    position: absolute;
+    animation: stars 5s linear infinite;
+}
+
+.sky .superman {
+    position: absolute;
+    animation: flying 5s linear infinite;
+}
+
+@keyframes stars {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
+@keyframes flying {
+    from {
+        transform: translateX(-200);
+        transform: translateY(250px);
+    }
+
+    to {
+        transform: translateX(1500px);
+
+    }
+}

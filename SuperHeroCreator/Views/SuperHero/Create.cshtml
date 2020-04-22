@@ -4,64 +4,67 @@
     ViewData["Title"] = "Create";
 }
 <br>
-<div class="backgroundColor">
-<div class="container-fluid text-light">
-    <h1 class="text-light text-center">Create your own</h1>
-
-    <h3 class="text-light text-center">SuperHero</h3>
-    <hr />
+<div class="contatiner" style="height: 300px;">
+    <div class="jumbotron jumbotronImage">
+        <h4 class="display-4 text-center text-white">Create your own</h4>
+        <h6 class="display-4 text-center text-white">Superhero</h6>
+        <hr class="my-4">
+    </div>
+</div>
+<div class="container backgroundColorGray text-light">
     <div class="row">
         <div class="col-md-1"></div>
-            <div class="col-md-5">
-                <form asp-action="Create">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="Name" class="control-label"></label>
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="AlterEgoName" class="control-label"></label>
-                        <input asp-for="AlterEgoName" class="form-control" />
-                        <span asp-validation-for="AlterEgoName" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="PrimaryAbility" class="control-label"></label>
-                        <input asp-for="PrimaryAbility" class="form-control" />
-                        <span asp-validation-for="PrimaryAbility" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="SecondaryAbility" class="control-label"></label>
-                        <input asp-for="SecondaryAbility" class="form-control" />
-                        <span asp-validation-for="SecondaryAbility" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Catchphrase" class="control-label"></label>
-                        <input asp-for="Catchphrase" class="form-control" />
-                        <span asp-validation-for="Catchphrase" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
-                    </div>
-                </form>
-                <a asp-action="Index" class="text-light">Back to List</a> <br>
-                <br>
-            </div>
-            <div class="col-md-5">
-                <div class="wrap">
-                    <div class="cube">
-                        <img src="https://image.ibb.co/cFjyNo/ironman.jpg">
-                        <img src="https://image.ibb.co/eRXra8/Thor_Spence_200_200-81_s_c1.jpg">
-                        <img src="https://image.ibb.co/gN72ho/hulk.jpg">
-                        <img src="https://image.ibb.co/dc3sho/captenamerica.jpg">
-                        <img src="https://image.ibb.co/b6ck2o/hawkeye.jpg">
-                        <img src="https://image.ibb.co/cNTKTT/blackwidow.jpg">
-                    </div>
+        <div class="col-md-5">
+            <br>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AlterEgoName" class="control-label"></label>
+                    <input asp-for="AlterEgoName" class="form-control" />
+                    <span asp-validation-for="AlterEgoName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PrimaryAbility" class="control-label"></label>
+                    <input asp-for="PrimaryAbility" class="form-control" />
+                    <span asp-validation-for="PrimaryAbility" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SecondaryAbility" class="control-label"></label>
+                    <input asp-for="SecondaryAbility" class="form-control" />
+                    <span asp-validation-for="SecondaryAbility" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Catchphrase" class="control-label"></label>
+                    <input asp-for="Catchphrase" class="form-control" />
+                    <span asp-validation-for="Catchphrase" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary text-light" />
+                </div>
+            </form>
+            <a asp-action="Index" class="text-light">Back to List</a> <br>
+            <br>
+        </div>
+        <div class="col-md-5">
+            <div class="wrap">
+                <div class="cube">
+                    <img src="https://image.ibb.co/cFjyNo/ironman.jpg">
+                    <img src="https://image.ibb.co/eRXra8/Thor_Spence_200_200-81_s_c1.jpg">
+                    <img src="https://image.ibb.co/gN72ho/hulk.jpg">
+                    <img src="https://image.ibb.co/dc3sho/captenamerica.jpg">
+                    <img src="https://image.ibb.co/b6ck2o/hawkeye.jpg">
+                    <img src="https://image.ibb.co/cNTKTT/blackwidow.jpg">
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
     @section Scripts {
